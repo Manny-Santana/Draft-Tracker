@@ -45,13 +45,20 @@ const createPlayerComponent = player => {
   const $img = $("<img>");
   $img.attr("src", getImage(player)); //set the players image
   const $row = $("<tr>").addClass("player-data");
-  const td = $("<td>");
+  const tdPlayerCard = $("<td>").addClass("player-card");
+  const h4Name = $("<h4>").text(player.Name);
   // <tr class="player-data">
-  // <td><img src="" alt=""></td>
-  // <td>Antonio Allison</td>
-  // <td>Green Bay Packers</td>
-  // <td>WR</td>
-  // </tr>
+  //               <td class='player-card'>
+  //               </h4>Antonio Allison
+  //                   <h4>
+
+  //                   <img src="images/nfl-arizona-cardinals-team-logo-2-768x768.png" alt=""></td>
+  //               <td>Green Bay Packers</td>
+  //               <td>WR</td>
+  //               <td>stat1</td>
+  //               <td>stat1</td>
+
+  //           </tr>
 };
 
 $(() => {
