@@ -26,6 +26,9 @@ const findPlayerbyName = (playerObjectArray, playerName) => {
     }
   }
 };
+const getImage = player => {
+  return player.PhotoUrl;
+};
 const key = "6e2832ec52c340428b51f52b6ae367e0";
 // const endpoint = "https://api.yelp.com/v3/businesses/search";
 const isGameInProgress =
@@ -37,7 +40,19 @@ const getTeams = "https://api.sportsdata.io/v3/nfl/scores/json/Teams/2019REG";
 const playerWeek =
   "https://api.sportsdata.io/v3/nfl/projections/json/DfsSlatesByWeek/2019REG/1";
 
-const createPlayerComponent = player => {};
+//creates each
+const createPlayerComponent = player => {
+  const $img = $("<img>");
+  $img.attr("src", getImage(player)); //set the players image
+  const $row = $("<tr>").addClass("player-data");
+  const td = $("<td>");
+  // <tr class="player-data">
+  // <td><img src="" alt=""></td>
+  // <td>Antonio Allison</td>
+  // <td>Green Bay Packers</td>
+  // <td>WR</td>
+  // </tr>
+};
 
 $(() => {
   // callAPI(getPlayerData, players => {

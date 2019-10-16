@@ -10,7 +10,7 @@ header{
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: rgb(88, 183, 214);
+    background-color: rgb(75, 200, 200);
     height: 10vh;
     
 }
@@ -20,21 +20,29 @@ li{
 a{
     text-decoration: none;
     color: black;
-    height: 50px;
-    width: 60px;
+    height: 10%;
+    width: 30%;
     font-size: 1.5em;
     font-family: 'Montserrat Subrayada', sans-serif;
     background-color: rgb(61, 157, 189);
     border: solid 2px whitesmoke;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
+    flex: 1;
+    margin: 20px;
+}
+a:hover {
+    color:white;
+    background-color: lightseagreen;
+    border: solid 2px black;
 }
 
 .title{
     font-family: 'Montserrat Subrayada', sans-serif;
+    flex: 1;
 }
 .results{
-    border: 2px solid lightblue;
+    border: 2px solid #aaaaaa;
     display: flex;
     justify-content: right;
     width: 80vw;
@@ -43,13 +51,14 @@ a{
     box-shadow: 10px 10px 5px #aaaaaa;
     margin-top: 5vh;
     overflow-y: scroll;
+    overflow-x: scroll;
 }
 input {
-    border: 2px solid lightpink;
+    border: 2px solid rgb(107, 105, 105);
     outline: none;
 }
 .search-bar{
-    border: 2px solid salmon;
+    border: 2px solid rgb(130, 130, 130);
     display: flex;
     align-items:center;
     justify-content:space-around;
@@ -58,11 +67,12 @@ input {
     box-shadow: 10px 10px 5px #aaaaaa;
     width: 90vw;
     margin: 0 auto;
+    background-color: #dfdddd;;
 }
 #search-text{
 height: 5vh;
 width: 50vw;
-font-size: 2rem;
+font-size: 1.5rem;
 border-radius: 50px;
 padding: 20px;
 
@@ -70,7 +80,7 @@ padding: 20px;
 #search-btn {
     height: 5vh;
     width: 10vw;
-    font-size: 1.5em;
+    font-size: 80%;
     color: gray;
     border-radius: 12px;
     
@@ -90,15 +100,35 @@ table {
   }
   
   td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
+    border-bottom: 1px solid #757575;
+    text-align: center;
     padding: 8px;
+    margin: 0;
+    font-size: 80%;
+    
   }
   
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-  img{
-      height: 5vh;
-      width: 50%;
+  header img{
+      height: 85%;
+      max-width: 65px ;
+      
+      flex: 1;
+  }
+  td img{
+      
+      height: 70px;
+      max-width: 65px;
+      margin: 0 auto;
+      
+      
+  }
+  .player-card {
+      text-align: center; 
+      display: flex;
+      flex-direction: column;
+     
+      
   }
