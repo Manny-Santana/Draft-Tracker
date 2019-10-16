@@ -15,7 +15,7 @@ const callAPI = (url, callback) => {
     callback(data);
   });
 };
-const findPlayerID = (playerObjectArray, playerName) => {
+const findPlayerbyName = (playerObjectArray, playerName) => {
   for (let i = 0; i < playerObjectArray.length; i++) {
     if (playerObjectArray[i].Name.toLowerCase() === playerName.toLowerCase()) {
       console.log(`Name: ${playerObjectArray[i].Name} \n
@@ -37,13 +37,15 @@ const getTeams = "https://api.sportsdata.io/v3/nfl/scores/json/Teams/2019REG";
 const playerWeek =
   "https://api.sportsdata.io/v3/nfl/projections/json/DfsSlatesByWeek/2019REG/1";
 
+const createPlayerComponent = player => {};
+
 $(() => {
-  callAPI(getPlayerData, players => {
-    const img = $("<img>").attr(
-      "src",
-      findPlayerID(players, "David Johnson").PhotoUrl
-    );
-    $(".results").append(img);
-    // console.log(findPlayerID(players, "David Johnson").PhotoUrl);
-  });
+  // callAPI(getPlayerData, players => {
+  //   const img = $("<img>").attr(
+  //     "src",//findPlayerID was changed to findPlayerByName
+  //     findPlayerID(players, "David Johnson").PhotoUrl
+  //   );
+  //   $(".results").append(img);
+  //   // console.log(findPlayerID(players, "David Johnson").PhotoUrl);
+  // });
 });
