@@ -97,6 +97,7 @@ const createPlayerComponent = (player, statsforseason) => {
 };
 
 $(() => {
+  // const player = findPlayerByName(players, "James Conner");
   //GET PLAYER STATS BY SEASON!!!
   // callAPI(seasonStatsByPlayer, player => {
   //   console.log(player);
@@ -104,12 +105,27 @@ $(() => {
   // console.log("connected");
   //GET PLAYER OBJECT BY NAME AND GET PLAYER ID BY NAME
   //WORKS!!!
-  callAPI(getPlayerData, players => {
-    const player = findPlayerByName(players, "James Conner");
-    callAPI(getSeasonStatsByPlayer(player.PlayerID), seasondata => {
-      createPlayerComponent(player, seasondata);
+  // callAPI(getPlayerData, players => {
+
+  // for( let i = 0; i < players.length; i++){
+  $("#search-btn").on("click", () => {
+    const playerName = $("#search-text").val();
+    console.log(`value of search = ${playerName}`);
+    callAPI(getPlayerData, playersArray => {
+      console.log(`value of players array = ${playersArray}`);
+      const playerID = findPlayerID(playersArray, playerName);
+      console.log(`value of playerid = ${playerID}`);
+
+      callAPI(getSeasonStatsByPlayer(playerID), seasondata => {
+        createPlayerComponent(
+          findPlayerByName(playersArray, playerName),
+          seasondata
+        );
+      });
     });
   });
+  // };
+  // });
   // callAPI(playerGameStatsByPlayer, player => {});
   // $.ajax({
   //   type: "GET",
