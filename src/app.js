@@ -49,7 +49,6 @@ const isGameInProgress =
 const getPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/Players";
 const playerImage = "https://api.sportsdata.io/v3/nfl/headshots/json/Headshots";
 const getTeams = "https://api.sportsdata.io/v3/nfl/scores/json/Teams/2019REG";
-
 const playerWeek =
   "https://api.sportsdata.io/v3/nfl/projections/json/DfsSlatesByWeek/2019REG/1";
 const getPlayerStatsByWeek = (playersArray, playername, week) => {
@@ -75,6 +74,7 @@ const createPlayerComponent = (player, statsforseason) => {
   //get fantasypoints somehow
   const targets = statsforseason[0].ReceivingTargets;
   const rushattempts = statsforseason[0].RushingAttempts;
+  const ReceptionPercentage = statsforseason[0].ReceptionPercentage;
 
   // const tdPlayerCard = $("<td>").addClass("player-card");
   // const h4Name = $("<h4>").text(player.Name);
@@ -88,73 +88,41 @@ const createPlayerComponent = (player, statsforseason) => {
 
                   <td>${player.Team}</td>
                   <td>${player.Position}</td>
-                  <td> <h4>AVERGAE Fantasy Points PER GAME: ${fantasypoints /
+                  <td><h4>Targets:${targets} </h4></td>
+                  <td> <h4>Avg Fantasy PPG: ${fantasypoints /
                     gamesPlayed} </h4></td>
-                  <td><h4>Targets: ${targets + rushattempts} </h4></td>
+                    <td><h4>Total Fantasy Points: ${fantasypoints}</h4></td>
+                    <td><h4>Reception Percentage: ${ReceptionPercentage}</h4></td>
+                    <td><h4>Rushing Attemps (Season): ${rushattempts}</h4></td>
+                    <td><h4>Rushing Attemps (Season): ${rushattempts}</h4></td>
+                    <td><h4>Rushing Attemps (Season): ${rushattempts}</h4></td>
+                    
+                  
     `
   );
   $("tbody").append($row);
 };
 
 $(() => {
-  // const player = findPlayerByName(players, "James Conner");
-  //GET PLAYER STATS BY SEASON!!!
-  // callAPI(seasonStatsByPlayer, player => {
-  //   console.log(player);
-  // });
-  // console.log("connected");
-  //GET PLAYER OBJECT BY NAME AND GET PLAYER ID BY NAME
-  //WORKS!!!
-  // callAPI(getPlayerData, players => {
+  //start of jquery on window load
 
-  // for( let i = 0; i < players.length; i++){
   $("#search-btn").on("click", () => {
     const playerName = $("#search-text").val();
     console.log(`value of search = ${playerName}`);
+
     callAPI(getPlayerData, playersArray => {
+      //start of getplayerdata call
       console.log(`value of players array = ${playersArray}`);
       const playerID = findPlayerID(playersArray, playerName);
       console.log(`value of playerid = ${playerID}`);
 
       callAPI(getSeasonStatsByPlayer(playerID), seasondata => {
+        //start of seadon data call
         createPlayerComponent(
           findPlayerByName(playersArray, playerName),
           seasondata
         );
-      });
-    });
+      }); //end of season data call
+    }); //end of get player data call
   });
-  // };
-  // });
-  // callAPI(playerGameStatsByPlayer, player => {});
-  // $.ajax({
-  //   type: "GET",
-  //   url: `https://api.sportsdata.io/v3/nfl/stats/json/PlayerGameStatsByPlayerID/2019REG/1/${findPlayerID(
-  //     players,
-  //     "James Conner"
-  //   )}`,
-  //   dataType: "json",
-  //   headers: {
-  //     "Ocp-Apim-Subscription-Key": key
-  //   },
-  //   success: function() {
-  //     alert("authentication successful");
-  //   }
-  // }).done(data => {
-  //   console.log(data);
-  // });
-  // let players = $.ajax({
-  //   type: "GET",
-  //   url: getPlayerData,
-  //   dataType: "json",
-  //   headers: {
-  //     "Ocp-Apim-Subscription-Key": key
-  //   },
-  //   success: function() {
-  //     alert("authentication successful");
-  //   }
-  // }).done(data => {
-  //   console.log(data);
-  // });
-  // console.log(`all players: ${players}`);
-});
+}); //end of jquery

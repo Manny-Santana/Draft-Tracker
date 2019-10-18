@@ -13,6 +13,7 @@ header{
     background-color: rgb(75, 200, 200);
     height: 10vh;
     
+    
 }
 li{
     list-style: none;
@@ -26,16 +27,51 @@ a{
     font-family: 'Montserrat Subrayada', sans-serif;
     background-color: rgb(61, 157, 189);
     border: solid 2px whitesmoke;
-    border-radius: 10px;
-    padding: 10px;
-    flex: 1;
+    
+    
+    
+}.btn-hover {
+    width: 150px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
     margin: 20px;
+    height: 50%;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    padding: 10px;
+    
+    
+
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
-a:hover {
-    color:white;
-    background-color: lightseagreen;
-    border: solid 2px black;
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+
+
+
 
 .title{
     font-family: 'Montserrat Subrayada', sans-serif;
@@ -50,8 +86,7 @@ a:hover {
     margin: 0 auto;
     box-shadow: 10px 10px 5px #aaaaaa;
     margin-top: 5vh;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow: scroll;
 }
 input {
     border: 2px solid rgb(107, 105, 105);
