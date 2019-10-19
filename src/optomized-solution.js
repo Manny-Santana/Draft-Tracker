@@ -116,6 +116,13 @@ $(() => {
     ///TEST! THIS WILL THREORETICALLY WORK BUT IT WILL MOST LIKELY CHEW UP MY API REQUEST LIMIT OF 1000/MONTH DO NOT IMPLEMENT.... YET :)
 
     //I COULD ALSO LIMIT THE NUMBER OF REQUESTS BY FILTERING THE PLAYER OBJECT ARRAY FOR ONLY ACTIVE PLAYERS IN THE 2019 SEASON.
+    for (let object in playersObjectsArray) {
+      const playerID = object.playerID;
+      callAPI(getSeasonStatsByPlayer(playerID), seasonstats => {
+        object.seasonData = seasonstats;
+      });
+    }
+    ///////AGAIN... CATUION... THIS WILL WORK BUT IT WILL DESTROY THE PROGRAM..
   }); //end of get player data api call...
 
   $("#search-btn").on("click", () => {
