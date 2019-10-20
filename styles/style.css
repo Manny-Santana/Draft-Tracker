@@ -179,6 +179,20 @@ td img {
     width: 70px;
     margin: 20px;
   }
+  button {
+    display: none;
+  }
+  .burger {
+    display: block;
+    margin-right: 30px;
+  }
+  .burger-bar {
+    background-color: white;
+    height: 5px;
+    width: 35px;
+    flex: 1;
+    margin: 4px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -198,13 +212,17 @@ td img {
   }
 
   .search-bar {
-    height: 20vh;
+    height: fit-content;
   }
   #search-btn {
-    margin-top: 10px;
     width: 50%;
+    padding: 5px;
   }
   #search-text {
     width: 200px;
+  }
+
+  nav button {
+    display: none;
   }
 }
