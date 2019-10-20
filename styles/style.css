@@ -1,169 +1,210 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background-color: rgb(75, 200, 200);
-    height: 10vh;
-    
-    
+header {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: rgb(75, 200, 200);
+  height: 10vh;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-a{
-    text-decoration: none;
-    color: black;
-    height: 10%;
-    width: 30%;
-    font-size: 1.5em;
-    font-family: 'Montserrat Subrayada', sans-serif;
-    background-color: rgb(61, 157, 189);
-    border: solid 2px whitesmoke;
-    
-    
-    
-}.btn-hover {
-    width: 150px;
-    font-size: 1em;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 50%;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-    padding: 10px;
-    
-    
+a {
+  text-decoration: none;
+  color: black;
+  height: 10%;
+  width: 30%;
+  font-size: 1.5em;
+  font-family: "Montserrat Subrayada", sans-serif;
+  background-color: rgb(61, 157, 189);
+  border: solid 2px whitesmoke;
+}
+.btn-hover {
+  width: 150px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 50%;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  padding: 10px;
 
-    border-radius: 50px;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+  border-radius: 50px;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn-hover:hover {
-    background-position: 100% 0;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn-hover:focus {
-    outline: none;
+  outline: none;
 }
 
 .btn-hover.color-1 {
-    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
-    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #40e495,
+    #30dd8a,
+    #2bb673
+  );
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
 
-
-
-
-
-.title{
-    font-family: 'Montserrat Subrayada', sans-serif;
-    flex: 1;
+.title {
+  font-family: "Montserrat Subrayada", sans-serif;
+  flex: 1;
 }
-.results{
-    border: 2px solid #aaaaaa;
-    display: flex;
-    justify-content: right;
-    width: 80vw;
-    height: 75vh;
-    margin: 0 auto;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    margin-top: 5vh;
-    overflow: scroll;
+.results {
+  border: 2px solid #aaaaaa;
+  display: flex;
+  justify-content: right;
+  width: 80vw;
+  height: 75vh;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  margin-top: 5vh;
+  overflow: scroll;
 }
 input {
-    border: 2px solid rgb(107, 105, 105);
-    outline: none;
+  border: 2px solid rgb(107, 105, 105);
+  outline: none;
 }
-.search-bar{
-    border: 2px solid rgb(130, 130, 130);
-    display: flex;
-    align-items:center;
-    justify-content:space-around;
-    flex-wrap: wrap;
-    height: 10vh;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    width: 90vw;
-    margin: 0 auto;
-    background-color: #dfdddd;;
+.search-bar {
+  border: 2px solid rgb(130, 130, 130);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 10vh;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #dfdddd;
 }
-#search-text{
-height: 5vh;
-width: 50vw;
-font-size: 1.5rem;
-border-radius: 50px;
-padding: 20px;
-
+#search-text {
+  height: 5vh;
+  width: 50vw;
+  font-size: 1rem;
+  border-radius: 50px;
+  padding: 20px;
 }
 #search-btn {
-    height: 5vh;
-    width: 10vw;
-    font-size: 80%;
-    color: gray;
-    border-radius: 12px;
-    
+  height: 5vh;
+  width: 10vw;
+  font-size: 1rem;
+  color: gray;
+  border-radius: 12px;
 }
-#search-btn:hover{
-    box-shadow: 5px 5px 5px #aaaaaa;
+#search-btn:hover {
+  box-shadow: 5px 5px 5px #aaaaaa;
 }
-#search-text:hover{
-
-    box-shadow: 5px 5px 5px #aaaaaa;
+#search-text:hover {
+  box-shadow: 5px 5px 5px #aaaaaa;
 }
 
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px solid #cccccc;
+  text-align: center;
+  padding: 8px;
+  margin: 0;
+  font-size: 80%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+header img {
+  height: 85%;
+  max-width: 65px;
+
+  flex: 1;
+}
+td img {
+  height: 70px;
+  max-width: 60px;
+  margin: 0 auto;
+}
+.player-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 15px;
   }
-  
-  td, th {
-    border-bottom: 1px solid #cccccc;
-    text-align: center;
-    padding: 8px;
-    margin: 0;
-    font-size: 80%;
-    
+  header {
+    align-content: center;
   }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
+  .search-bar {
+    justify-content: space-around;
+    align-content: center;
   }
-  header img{
-      height: 85%;
-      max-width: 65px ;
-      
-      flex: 1;
+  #search-text {
+    width: 200px;
+    margin: 10px;
+
+    flex: 2;
   }
-  td img{
-      
-      height: 70px;
-      max-width: 65px;
-      margin: 0 auto;
-      
-      
+  #search-btn {
+    flex: 1;
+    width: 70px;
+    margin: 20px;
   }
-  .player-card {
-      text-align: center; 
-      display: flex;
-      flex-direction: column;
-     
-      
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 10px;
   }
+  img {
+    height: 40px;
+    width: 40px;
+  }
+  td img {
+    width: 55px;
+  }
+  header {
+    height: 10vh;
+    align-content: center;
+  }
+
+  .search-bar {
+    height: 20vh;
+  }
+  #search-btn {
+    margin-top: 10px;
+    width: 50%;
+  }
+  #search-text {
+    width: 200px;
+  }
+}
