@@ -65,8 +65,8 @@ const getSeasonStatsByPlayer = playerID => {
 //statsforgivenweek  - should be obtained from calling the api on the playerstats per week endpoint
 
 const createPlayerComponent = (player, statsforseason) => {
-  const $img = $("<img>");
-  $img.attr("src", getImage(player)); //set the players image
+  // const $img = $("<img>");
+  // $img.attr("src", getImage(player)); //set the players image
   const $row = $("<tr>").addClass("player-data");
   //TODO
   const fantasypoints = statsforseason[0].FantasyPoints;
@@ -78,13 +78,14 @@ const createPlayerComponent = (player, statsforseason) => {
 
   // const tdPlayerCard = $("<td>").addClass("player-card");
   // const h4Name = $("<h4>").text(player.Name);
+  // <img src=${player.PhotoUrl} alt="player"></td>
   $row.html(
     `
     
                   <td class='player-card'>
                   </h4>${player.Name}<h4>
   
-                      <img src=${player.PhotoUrl} alt="player"></td>
+                      
 
                   <td>${player.Team}</td>
                   <td>${player.Position}</td>
