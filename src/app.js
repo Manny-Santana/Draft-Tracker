@@ -1,4 +1,6 @@
 // @ts-nocheck
+
+///////////////////// START OF FUNCTIONS //////////////////////////////////////////////////
 //accepts method to use ie: url for return data and callback function to pass as a data handler
 const callAPI = (url, callback) => {
   $.ajax({
@@ -42,15 +44,7 @@ const findPlayerByName = (playerObjectArray, playerName) => {
 const getImage = player => {
   return player.PhotoUrl;
 };
-const key = "6e2832ec52c340428b51f52b6ae367e0";
-// const endpoint = "https://api.yelp.com/v3/businesses/search";
-const isGameInProgress =
-  "https://api.sportsdata.io/v3/nfl/scores/json/AreAnyGamesInProgress";
-const getPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/Players";
-const playerImage = "https://api.sportsdata.io/v3/nfl/headshots/json/Headshots";
-const getTeams = "https://api.sportsdata.io/v3/nfl/scores/json/Teams/2019REG";
-const playerWeek =
-  "https://api.sportsdata.io/v3/nfl/projections/json/DfsSlatesByWeek/2019REG/1";
+
 const getPlayerStatsByWeek = (playersArray, playername, week) => {
   const playerid = findPlayerID(playersArray, playername);
   const statsURL = `https://api.sportsdata.io/v3/nfl/stats/json/PlayerGameStatsByPlayerID/2019REG/${week}/${playerid}`;
@@ -59,10 +53,6 @@ const getSeasonStatsByPlayer = playerID => {
   const seasonStatsByPlayer = `https://api.sportsdata.io/v3/nfl/stats/json/PlayerSeasonStatsByPlayerID/2019REG/${playerID}`;
   return seasonStatsByPlayer;
 };
-
-//creates each player card by combining api call data
-//player - should be each individual player object likely passed via looping the players array
-//statsforgivenweek  - should be obtained from calling the api on the playerstats per week endpoint
 
 const createPlayerComponent = (player, statsforseason) => {
   const $img = $("<img>");
@@ -109,22 +99,47 @@ const openNav = () => {
 const closeNav = () => {
   $("#mySidenav").css("width", "0");
 };
+////////END OF FUNCTIONS
+/////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////   KEY
+/////////
+const key = "6e2832ec52c340428b51f52b6ae367e0";
+///////////////////////////////////////////////////////////////////////// END OF KEY
+
+////////////////////////////////////////////////////////////////////
+//////// ENDPOINTS
+const isGameInProgress =
+  "https://api.sportsdata.io/v3/nfl/scores/json/AreAnyGamesInProgress";
+const getPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/Players";
+const playerImage = "https://api.sportsdata.io/v3/nfl/headshots/json/Headshots";
+const getTeams = "https://api.sportsdata.io/v3/nfl/scores/json/Teams/2019REG";
+const playerWeek =
+  "https://api.sportsdata.io/v3/nfl/projections/json/DfsSlatesByWeek/2019REG/1";
+
+/////////////////////////////////////////////////////////////////////////// END OF ENPOINTS
+
+//creates each player card by combining api call data
+//player - should be each individual player object likely passed via looping the players array
+//statsforgivenweek  - should be obtained from calling the api on the playerstats per week endpoint
 
 let playersObjectsArray; // variable to hold player array on page load
 
 $(() => {
-  //start of jquery on window load
+  //start of jquery on window load ---------------------------------------
   callAPI(getPlayerData, playersArray => {
     //start of getplayerdata call
     playersObjectsArray = playersArray;
     console.log("loaded all objects into the global players variable");
+  });
+  //end of get player data api call...
 
-    //TODO its too slow! how can i get it to be faster?!
-    //possible solution 1 - load all player objects into variable before button is clicked and use that to calculate numbers.
-    ///TEST! THIS WILL THREORETICALLY WORK BUT IT WILL MOST LIKELY CHEW UP MY API REQUEST LIMIT OF 1000/MONTH DO NOT IMPLEMENT.... YET :)
+  //TODO its too slow! how can i get it to be faster?!
+  //possible solution 1 - load all player objects into variable before button is clicked and use that to calculate numbers.
+  ///TEST! THIS WILL THREORETICALLY WORK BUT IT WILL MOST LIKELY CHEW UP MY API REQUEST LIMIT OF 1000/MONTH DO NOT IMPLEMENT.... YET :)
 
-    //I COULD ALSO LIMIT THE NUMBER OF REQUESTS BY FILTERING THE PLAYER OBJECT ARRAY FOR ONLY ACTIVE PLAYERS IN THE 2019 SEASON.
-  }); //end of get player data api call...
+  //I COULD ALSO LIMIT THE NUMBER OF REQUESTS BY FILTERING THE PLAYER OBJECT ARRAY FOR ONLY ACTIVE PLAYERS IN THE 2019 SEASON.
 
   //--------------------------------------------
   //set click event for open nav
