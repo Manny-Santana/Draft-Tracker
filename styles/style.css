@@ -104,11 +104,13 @@ input {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  height: 10vh;
+  height: fit-content;
   box-shadow: 10px 10px 5px #aaaaaa;
   width: 90vw;
   margin: 0 auto;
   background-color: #dfdddd;
+  padding: 20px;
+
 }
 #search-text {
   height: 5vh;
@@ -218,17 +220,19 @@ td img {
   .search-bar {
     justify-content: space-around;
     align-content: center;
+    
   }
   #search-text {
     width: 200px;
     margin: 10px;
-
+    
     flex: 2;
   }
   #search-btn {
     flex: 1;
     width: 70px;
-    margin: 20px;
+    
+
   }
   button {
     display: none;
@@ -269,7 +273,7 @@ td img {
   }
   #search-btn {
     width: 50%;
-    padding: 5px;
+    
   }
   #search-text {
     width: 200px;

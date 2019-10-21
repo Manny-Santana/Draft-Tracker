@@ -65,8 +65,8 @@ const createPlayerComponent = (player, statsforseason) => {
   const targets = statsforseason[0].ReceivingTargets;
   const rushattempts = statsforseason[0].RushingAttempts;
   const ReceptionPercentage = statsforseason[0].ReceptionPercentage;
-
-  // const tdPlayerCard = $("<td>").addClass("player-card");
+  const avgtouchdowns = statsforseason[0].Touchdowns;
+  const passingTouchdowns = statsforseason[0].PassingTouchdowns; // const tdPlayerCard = $("<td>").addClass("player-card");
   // const h4Name = $("<h4>").text(player.Name);
   $row.html(
     `
@@ -84,8 +84,8 @@ const createPlayerComponent = (player, statsforseason) => {
                     <td><h4>Total Fantasy Points: ${fantasypoints}</h4></td>
                     <td><h4>Reception Percentage: ${ReceptionPercentage}</h4></td>
                     <td><h4>Rushing Attemps (Season): ${rushattempts}</h4></td>
-                    <td><h4>Rushing Attemps (Season): ${rushattempts}</h4></td>
-                    <td><h4>Rushing Attemps (Season): ${rushattempts}</h4></td>
+                    <td><h4>Passing Touchdowns (Season): ${passingTouchdowns}</h4></td>
+                    <td><h4>Average Touchdowns: ${avgtouchdowns}</h4></td>
                     
                   
     `
