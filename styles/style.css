@@ -13,7 +13,7 @@ body {
 }
 .overlay {
   background: rgba(234, 236, 236, 0.918);
-  height: 110vh;
+  height:fit-content;
 }
 
 header {
@@ -154,8 +154,10 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 header img {
-  height: 85%;
-  max-width: 65px;
+  height: 90%;
+  max-width: 5vw;
+  margin: 5px;
+  padding: 2px;
 
   flex: 1;
 }
@@ -219,6 +221,10 @@ td img {
   header {
     align-content: center;
   }
+  header img{
+    height: 5vh;
+    max-width: 7vw;
+  }
   .search-bar {
     justify-content: space-around;
     align-content: center;
@@ -270,6 +276,12 @@ td img {
     align-content: center;
   }
 
+  header img{
+    height: 5vh;
+    width: 100%;
+    margin: 10px;
+
+  }
   .search-bar {
     height: fit-content;
   }
